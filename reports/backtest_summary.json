@@ -1,0 +1,131 @@
+{
+  "symbols": [
+    "IWM",
+    "QQQ",
+    "SPY"
+  ],
+  "data_dir": "data\\raw",
+  "strategy": "quant_only_v0.1.0",
+  "split": "50% development / 25% validation / 25% out_of_sample",
+  "periods": {
+    "development": {
+      "start": "2026-06-17T13:30:00+00:00",
+      "end": "2026-07-30T19:30:00+00:00",
+      "metrics": {
+        "initial_equity": 500.0,
+        "final_equity": 494.50318969919795,
+        "total_return": -0.010993620601604137,
+        "max_drawdown": -0.013752694294727141,
+        "sharpe_ratio": -7.415120843297402,
+        "win_rate": 0.125,
+        "profit_factor": 0.08927788239779033,
+        "closed_trades": 8.0,
+        "accepted_trades": 16.0,
+        "rejected_trades": 1.0,
+        "fees": 1.5855501369665965
+      },
+      "benchmark_metrics": {
+        "initial_equity": 500.0,
+        "final_equity": 485.4629960764174,
+        "total_return": -0.029074007847165184,
+        "max_drawdown": -0.0560167577589612,
+        "sharpe_ratio": -1.5328759560767806,
+        "win_rate": 0.0,
+        "profit_factor": 0.0,
+        "closed_trades": 0.0,
+        "accepted_trades": 0.0,
+        "rejected_trades": 0.0,
+        "fees": 0.0
+      },
+      "accepted_trades": 16
+    },
+    "validation": {
+      "start": "2026-07-31T13:30:00+00:00",
+      "end": "2026-08-20T19:30:00+00:00",
+      "metrics": {
+        "initial_equity": 500.0,
+        "final_equity": 499.85769450175906,
+        "total_return": -0.00028461099648191546,
+        "max_drawdown": -0.009572011854133256,
+        "sharpe_ratio": -0.13561321696872344,
+        "win_rate": 0.2857142857142857,
+        "profit_factor": 1.1664534724773492,
+        "closed_trades": 7.0,
+        "accepted_trades": 14.0,
+        "rejected_trades": 6.0,
+        "fees": 1.4045061516807835
+      },
+      "benchmark_metrics": {
+        "initial_equity": 500.0,
+        "final_equity": 510.137790169785,
+        "total_return": 0.02027558033957,
+        "max_drawdown": -0.025415957779069243,
+        "sharpe_ratio": 4.496884637885272,
+        "win_rate": 0.0,
+        "profit_factor": 0.0,
+        "closed_trades": 0.0,
+        "accepted_trades": 0.0,
+        "rejected_trades": 0.0,
+        "fees": 0.0
+      },
+      "accepted_trades": 14
+    },
+    "out_of_sample": {
+      "start": "2026-08-21T13:30:00+00:00",
+      "end": "2026-09-11T19:30:00+00:00",
+      "metrics": {
+        "initial_equity": 500.0,
+        "final_equity": 495.32122750191604,
+        "total_return": -0.009357544996167921,
+        "max_drawdown": -0.010580790393828643,
+        "sharpe_ratio": -7.482126781826432,
+        "win_rate": 0.0,
+        "profit_factor": 0.0,
+        "closed_trades": 6.0,
+        "accepted_trades": 12.0,
+        "rejected_trades": 0.0,
+        "fees": 1.187097865974519
+      },
+      "benchmark_metrics": {
+        "initial_equity": 500.0,
+        "final_equity": 492.6633078062972,
+        "total_return": -0.014673384387405619,
+        "max_drawdown": -0.026046988917269753,
+        "sharpe_ratio": -1.5343759568314292,
+        "win_rate": 0.0,
+        "profit_factor": 0.0,
+        "closed_trades": 0.0,
+        "accepted_trades": 0.0,
+        "rejected_trades": 0.0,
+        "fees": 0.0
+      },
+      "accepted_trades": 12
+    }
+  },
+  "metrics": {
+    "initial_equity": 500.0,
+    "final_equity": 489.71880801074144,
+    "total_return": -0.020562383978517174,
+    "max_drawdown": -0.023294763280320874,
+    "sharpe_ratio": -4.149701102909313,
+    "win_rate": 0.14285714285714285,
+    "profit_factor": 0.3451519287103906,
+    "closed_trades": 21.0,
+    "accepted_trades": 42.0,
+    "rejected_trades": 7.0,
+    "fees": 4.148969917389404
+  },
+  "benchmark_metrics": {
+    "initial_equity": 500.0,
+    "final_equity": 495.4509496826469,
+    "total_return": -0.009098100634706174,
+    "max_drawdown": -0.0560167577589612,
+    "sharpe_ratio": -0.23460418733062616,
+    "win_rate": 0.0,
+    "profit_factor": 0.0,
+    "closed_trades": 0.0,
+    "accepted_trades": 0.0,
+    "rejected_trades": 0.0,
+    "fees": 0.0
+  }
+}

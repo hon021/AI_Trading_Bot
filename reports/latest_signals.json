@@ -1,0 +1,20 @@
+{
+  "run_timestamp_utc": "2026-09-14T16:00:19.771814+00:00",
+  "run_timestamp_new_york": "2026-09-14T12:00:19.771814-04:00",
+  "mode": "quant_only_candidate_signals",
+  "paper_trade_executed": false,
+  "signals": {
+    "SPY": {
+      "signal": "HOLD",
+      "latest_closed_bar_utc": "2026-09-14T14:30:00+00:00"
+    },
+    "QQQ": {
+      "signal": "HOLD",
+      "latest_closed_bar_utc": "2026-09-14T14:30:00+00:00"
+    },
+    "IWM": {
+      "signal": "HOLD",
+      "latest_closed_bar_utc": "2026-09-14T14:30:00+00:00"
+    }
+  }
+}

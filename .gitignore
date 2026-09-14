@@ -1,0 +1,29 @@
+﻿# Python
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+
+# Environment
+.env
+.env.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# Reports y datos (excepto documentacion)
+reports/*.log
+reports/.scheduler_state.json
+data/raw/
+
+# Database
+*.db
+*.sqlite
+
+# Sistema
+.DS_Store
