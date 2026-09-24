@@ -32,8 +32,8 @@ async def system_status():
         try:
             with open(scheduler_state_file, "r") as f:
                 state = json.load(f)
-                last_run = state.get("last_execution")
-                scheduler_active = state.get("is_active", False)
+                last_run = state.get("last_slot")
+                scheduler_active = "last_slot" in state
         except Exception:
             pass
     

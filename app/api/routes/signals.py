@@ -35,6 +35,19 @@ async def get_latest_signals():
                         reason=sig.get("reason", None)
                     ))
                 return signals
+            if isinstance(data, dict):
+                timestamp = data.get("run_timestamp_utc", "")
+                return [
+                    SignalResponse(
+                        timestamp=timestamp,
+                        symbol=symbol,
+                        signal=details.get("signal", "HOLD"),
+                        indicators={},
+                        reason=None,
+                    )
+                    for symbol, details in data.get("signals", {}).items()
+                    if isinstance(details, dict)
+                ]
             return []
     except Exception:
         return []
