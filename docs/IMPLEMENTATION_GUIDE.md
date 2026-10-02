@@ -19,7 +19,7 @@ Al comenzar o terminar una sesion:
 5. Actualizar la seccion **Estado actual** antes de terminar.
 6. Registrar cualquier cambio de reglas como una nueva version de estrategia.
 
-El estado de este archivo debe ser la fuente de continuidad del proyecto. Los detalles tecnicos viven en el codigo y las decisiones de estrategia viven en `docs/strategy.md` cuando ese archivo sea creado.
+El estado de este archivo debe ser la fuente de continuidad del proyecto. Los detalles tecnicos viven en el codigo y las decisiones de estrategia viven en `docs/strategy.md`.
 
 ---
 
@@ -33,9 +33,12 @@ El estado de este archivo debe ser la fuente de continuidad del proyecto. Los de
 - **Activos elegidos:** `SPY`, `QQQ`, `IWM`
 - **Timeframe:** velas de 1 hora, con limite intradia de `yfinance`
 - **Zona horaria:** `America/New_York`
-- **Ultimo trabajo completado:** tarea automatica de Windows registrada para iniciar el scheduler de lunes a viernes a las 09:00; API REST implementada para acceso facil a datos
-- **Siguiente accion concreta:** observar los ciclos del 14 al 18 de septiembre y revisar los datos via API
-- **Bloqueos:** solo hay aproximadamente 60 dias de datos horarios; no avanzar a Qwen ni congelar rentabilidad con esta muestra
+- **Ultimo trabajo completado:** ciclo del scheduler del 2 de octubre a las 15:30 ET completado con `exit_code=0`; snapshot de datos y backtest reproducible guardados
+- **Snapshot:** `data/snapshots/2026-10-02/`, 420 filas originales por simbolo; el backtest usa 419 velas cerradas hasta `2026-10-02T18:30:00Z`
+- **Ultimas senales:** SPY `BUY`, QQQ `BUY`, IWM `HOLD`; son candidatas y `paper_trade_executed=false`
+- **Backtest actualizado:** retorno total -1.00% frente a +0.12% de Buy & Hold; fuera de muestra +0.17% frente a +0.73%, con 4 operaciones cerradas
+- **Siguiente accion concreta:** conservar las reglas de `quant_only_v0.1.0`, ampliar el historico validado y repetir la comparacion antes de evaluar cambios
+- **Bloqueos:** el historico horario de `yfinance` sigue limitado a unos 60 dias; la muestra fuera de muestra es pequena y no justifica conclusiones de rentabilidad ni avanzar a Qwen
 
 ### Criterio para cambiar de fase
 
@@ -55,6 +58,7 @@ No avanzar por calendario. Avanzar solamente cuando se cumplan los criterios de 
 - Mantener dos modos comparables: `quant_only` y `quant_plus_ai`.
 - Una modificacion de reglas crea una nueva version de estrategia.
 - Si una ejecucion falla, registrar el fallo; no convertirlo silenciosamente en una orden.
+- En backtests, fijar `--as-of` al timestamp de captura y excluir velas cuyo intervalo no habia cerrado.
 
 ---
 
@@ -171,6 +175,14 @@ No avanzar por calendario. Avanzar solamente cuando se cumplan los criterios de 
 - Guardar configuracion, dataset, version y resultados de cada corrida.
 
 **Validacion:** un segundo lanzamiento con la misma configuracion reproduce los resultados dentro de una tolerancia documentada.
+
+Para repetir el snapshot del 2 de octubre de 2026 sin incluir la ultima vela abierta:
+
+```powershell
+.\.venv\Scripts\python.exe -m scripts.run_backtest --data-dir data/snapshots/2026-10-02 --as-of 2026-10-02T19:30:15+00:00
+```
+
+El informe guarda el `as_of_utc`, los hashes SHA-256, las filas usadas y el timestamp de la ultima vela cerrada por simbolo. Los resultados historicos anteriores se conservaron en `reports/archive/2026-10-02/baseline_2026-09-12/`.
 
 **Salida:** informe que indique si la estrategia base merece pasar al experimento con IA.
 

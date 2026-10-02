@@ -1,10 +1,13 @@
 from __future__ import annotations
 
 import unittest
+from pathlib import Path
+from tempfile import TemporaryDirectory
 
 import pandas as pd
 
 from app.backtesting.engine import BacktestConfig, Backtester
+from scripts.run_backtest import load_frames
 
 
 def make_backtest_frame() -> pd.DataFrame:
@@ -37,6 +40,27 @@ def make_backtest_frame() -> pd.DataFrame:
 
 
 class BacktesterTests(unittest.TestCase):
+    def test_load_frames_excludes_hourly_bar_not_closed_at_as_of(self) -> None:
+        timestamps = pd.date_range("2026-10-02 18:30", periods=2, freq="h", tz="UTC")
+        frame = pd.DataFrame(
+            {
+                "Open": [100.0, 101.0],
+                "High": [101.0, 102.0],
+                "Low": [99.0, 100.0],
+                "Close": [100.5, 101.5],
+                "Volume": [1000, 0],
+            },
+            index=timestamps,
+        )
+        with TemporaryDirectory() as directory:
+            frame.to_csv(Path(directory) / "SPY_1h.csv", index_label="timestamp_utc")
+            loaded = load_frames(
+                Path(directory),
+                as_of=pd.Timestamp("2026-10-02T19:30:15Z"),
+            )
+
+        self.assertEqual(list(loaded["SPY"].index), [timestamps[0]])
+
     def test_orders_execute_on_next_bar_and_gap_stop_uses_open(self) -> None:
         frame = make_backtest_frame()
         result = Backtester(

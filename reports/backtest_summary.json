@@ -4,32 +4,53 @@
     "QQQ",
     "SPY"
   ],
-  "data_dir": "data\\raw",
+  "data_dir": "data\\snapshots\\2026-10-02",
+  "as_of_utc": "2026-10-02T19:30:15+00:00",
+  "datasets": {
+    "IWM": {
+      "sha256": "bd541e205c6223ac871b36b8349e30dd4de313edc13421e79fabf04900d7d7d4",
+      "bars_used": 419,
+      "first_bar_utc": "2026-07-10T13:30:00+00:00",
+      "last_closed_bar_utc": "2026-10-02T18:30:00+00:00"
+    },
+    "QQQ": {
+      "sha256": "1a6f3ed8ea041f2459259afb42b4520119d11d1da1abd4832ba59e6f3a7d51c4",
+      "bars_used": 419,
+      "first_bar_utc": "2026-07-10T13:30:00+00:00",
+      "last_closed_bar_utc": "2026-10-02T18:30:00+00:00"
+    },
+    "SPY": {
+      "sha256": "a40fe8e953ed5b4fc4daf468ebb2b4c5f2f6427ab34630ff687892f205de52cb",
+      "bars_used": 419,
+      "first_bar_utc": "2026-07-10T13:30:00+00:00",
+      "last_closed_bar_utc": "2026-10-02T18:30:00+00:00"
+    }
+  },
   "strategy": "quant_only_v0.1.0",
   "split": "50% development / 25% validation / 25% out_of_sample",
   "periods": {
     "development": {
-      "start": "2026-06-17T13:30:00+00:00",
-      "end": "2026-07-30T19:30:00+00:00",
+      "start": "2026-07-10T13:30:00+00:00",
+      "end": "2026-08-20T18:30:00+00:00",
       "metrics": {
         "initial_equity": 500.0,
-        "final_equity": 494.50318969919795,
-        "total_return": -0.010993620601604137,
-        "max_drawdown": -0.013752694294727141,
-        "sharpe_ratio": -7.415120843297402,
-        "win_rate": 0.125,
-        "profit_factor": 0.08927788239779033,
+        "final_equity": 498.80748374128837,
+        "total_return": -0.00238503251742328,
+        "max_drawdown": -0.00955218596814067,
+        "sharpe_ratio": -0.8819212256488396,
+        "win_rate": 0.25,
+        "profit_factor": 0.9087694665607702,
         "closed_trades": 8.0,
         "accepted_trades": 16.0,
-        "rejected_trades": 1.0,
-        "fees": 1.5855501369665965
+        "rejected_trades": 6.0,
+        "fees": 1.5989420922061142
       },
       "benchmark_metrics": {
         "initial_equity": 500.0,
-        "final_equity": 485.4629960764174,
-        "total_return": -0.029074007847165184,
-        "max_drawdown": -0.0560167577589612,
-        "sharpe_ratio": -1.5328759560767806,
+        "final_equity": 499.49792561491563,
+        "total_return": -0.0010041487701687446,
+        "max_drawdown": -0.04911118564576278,
+        "sharpe_ratio": 0.168187635323043,
         "win_rate": 0.0,
         "profit_factor": 0.0,
         "closed_trades": 0.0,
@@ -40,39 +61,8 @@
       "accepted_trades": 16
     },
     "validation": {
-      "start": "2026-07-31T13:30:00+00:00",
-      "end": "2026-08-20T19:30:00+00:00",
-      "metrics": {
-        "initial_equity": 500.0,
-        "final_equity": 499.85769450175906,
-        "total_return": -0.00028461099648191546,
-        "max_drawdown": -0.009572011854133256,
-        "sharpe_ratio": -0.13561321696872344,
-        "win_rate": 0.2857142857142857,
-        "profit_factor": 1.1664534724773492,
-        "closed_trades": 7.0,
-        "accepted_trades": 14.0,
-        "rejected_trades": 6.0,
-        "fees": 1.4045061516807835
-      },
-      "benchmark_metrics": {
-        "initial_equity": 500.0,
-        "final_equity": 510.137790169785,
-        "total_return": 0.02027558033957,
-        "max_drawdown": -0.025415957779069243,
-        "sharpe_ratio": 4.496884637885272,
-        "win_rate": 0.0,
-        "profit_factor": 0.0,
-        "closed_trades": 0.0,
-        "accepted_trades": 0.0,
-        "rejected_trades": 0.0,
-        "fees": 0.0
-      },
-      "accepted_trades": 14
-    },
-    "out_of_sample": {
-      "start": "2026-08-21T13:30:00+00:00",
-      "end": "2026-09-11T19:30:00+00:00",
+      "start": "2026-08-20T19:30:00+00:00",
+      "end": "2026-09-11T18:30:00+00:00",
       "metrics": {
         "initial_equity": 500.0,
         "final_equity": 495.32122750191604,
@@ -88,10 +78,10 @@
       },
       "benchmark_metrics": {
         "initial_equity": 500.0,
-        "final_equity": 492.6633078062972,
-        "total_return": -0.014673384387405619,
-        "max_drawdown": -0.026046988917269753,
-        "sharpe_ratio": -1.5343759568314292,
+        "final_equity": 495.89589111462465,
+        "total_return": -0.008208217770750759,
+        "max_drawdown": -0.02605482282612792,
+        "sharpe_ratio": -1.0293763996722318,
         "win_rate": 0.0,
         "profit_factor": 0.0,
         "closed_trades": 0.0,
@@ -100,27 +90,58 @@
         "fees": 0.0
       },
       "accepted_trades": 12
+    },
+    "out_of_sample": {
+      "start": "2026-09-11T19:30:00+00:00",
+      "end": "2026-10-02T18:30:00+00:00",
+      "metrics": {
+        "initial_equity": 500.0,
+        "final_equity": 500.85490462996574,
+        "total_return": 0.0017098092599314718,
+        "max_drawdown": -0.00603676717605961,
+        "sharpe_ratio": 0.9636022581466387,
+        "win_rate": 0.25,
+        "profit_factor": 1.8338982677293778,
+        "closed_trades": 4.0,
+        "accepted_trades": 8.0,
+        "rejected_trades": 0.0,
+        "fees": 0.8024399104836867
+      },
+      "benchmark_metrics": {
+        "initial_equity": 500.0,
+        "final_equity": 503.6394640873116,
+        "total_return": 0.007278928174623056,
+        "max_drawdown": -0.022720250906364092,
+        "sharpe_ratio": 1.1763144655114535,
+        "win_rate": 0.0,
+        "profit_factor": 0.0,
+        "closed_trades": 0.0,
+        "accepted_trades": 0.0,
+        "rejected_trades": 0.0,
+        "fees": 0.0
+      },
+      "accepted_trades": 8
     }
   },
   "metrics": {
     "initial_equity": 500.0,
-    "final_equity": 489.71880801074144,
-    "total_return": -0.020562383978517174,
-    "max_drawdown": -0.023294763280320874,
-    "sharpe_ratio": -4.149701102909313,
-    "win_rate": 0.14285714285714285,
-    "profit_factor": 0.3451519287103906,
-    "closed_trades": 21.0,
-    "accepted_trades": 42.0,
-    "rejected_trades": 7.0,
-    "fees": 4.148969917389404
+    "final_equity": 494.9754571058781,
+    "total_return": -0.010049085788243817,
+    "max_drawdown": -0.019878168618245762,
+    "sharpe_ratio": -1.728288667019779,
+    "win_rate": 0.16666666666666666,
+    "profit_factor": 0.6723052373734765,
+    "closed_trades": 18.0,
+    "accepted_trades": 36.0,
+    "rejected_trades": 6.0,
+    "fees": 3.576506583089847
   },
   "benchmark_metrics": {
     "initial_equity": 500.0,
-    "final_equity": 495.4509496826469,
-    "total_return": -0.009098100634706174,
-    "max_drawdown": -0.0560167577589612,
-    "sharpe_ratio": -0.23460418733062616,
+    "final_equity": 500.6096126575635,
+    "total_return": 0.0012192253151270815,
+    "max_drawdown": -0.05130418338967546,
+    "sharpe_ratio": 0.1882381971024675,
     "win_rate": 0.0,
     "profit_factor": 0.0,
     "closed_trades": 0.0,
